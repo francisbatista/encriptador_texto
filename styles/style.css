@@ -1,0 +1,100 @@
+
+body{
+    width: 100%;
+    height: 100%;
+    background-color: lightsteelblue;
+}
+p{
+    font-family: 'Inter', monospace;
+    font-size: 12px;
+}
+button{
+    font-family: 'Inter', monospace;
+    font-size: 18px;
+}
+main{
+    display: flex;
+    justify-content: space-between;
+    height: 40em
+}
+.logo{
+    margin: 2em 4em;
+    width: 2.5em;
+}
+.ladoDerecho{
+    display: inline-block;
+    width: 65%;
+    margin-top: 1em;
+
+}
+.ladoDerecho textarea{
+    display: block;
+    background-color: lightsteelblue;
+    margin-left: 25%;
+    width: 60%;
+    height: 50%;
+    font-family: 'Inter', monospace;
+    font-size: 32px;
+    resize: none;
+    border-style: none;
+    outline: none;
+}
+
+.ladoDerecho p{
+    display: inline;
+}
+.advertencia{
+    margin: 3% 25%;
+}
+.botones{
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 25%;
+}
+.botones button, .ladoIzquierdo button{
+    padding: 10px;
+    width: 250px;
+    border-radius: 8px;
+    border-style: none;
+    text-align: center;
+   
+}
+#encriptar{
+    background-color: darkblue;
+    color: white;
+}
+button:active{
+    transform: scale(1.1);
+}
+.ladoIzquierdo{
+    display: flex;
+    width: 25%;
+    margin-top: 2em;
+    margin-right: 1em;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    background-color: white;
+    border-radius: 20px;
+
+}
+.ladoIzquierdo textarea{
+    width: 20em;
+    height: 50%;
+    font-family: 'Inter', monospace;
+    font-size: 32px;
+    resize: none;
+    border-style: none;
+    outline: none;
+}
+.ladoIzquierdo button{
+    margin-top: 9%;
+    background-color: darkblue;
+    color: white;
+}
+.ladoIzquierdo div img + p{
+    font-size: 28px;
+    width: 10em;
+    margin: 3% auto;
+}
