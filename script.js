@@ -58,18 +58,16 @@ function copiar(){
 }
 
 function textAreaOnPaste(){
-    textAreaTextoEncriptado.value = "";
-    textAreaTextoEncriptado.hidden = true;
-    botonCopiar.hidden = true;
-    imagenMuneco.hidden = false;
-    parrafoInfoNingunMsj.hidden = false;
-    parrafoInfoIngresaTxt.hidden = false;
-    botonEncriptar.setAttribute("disabled","true");
-    botonDesencriptar.removeAttribute("disabled");
+        textAreaTextoEncriptado.value = "";
+        textAreaTextoEncriptado.hidden = true;
+        botonCopiar.hidden = true;
+        imagenMuneco.hidden = false;
+        parrafoInfoNingunMsj.hidden = false;
+        parrafoInfoIngresaTxt.hidden = false;
 }
 
 botonEncriptar.addEventListener("click", encriptar);
 botonCopiar.addEventListener("click", copiar);
-
 textAreaEncriptar.addEventListener("paste", textAreaOnPaste);
+
 
