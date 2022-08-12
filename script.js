@@ -1,36 +1,15 @@
-
-const btnCopiar = document.createElement("button");
-btnCopiar.innerText = "Copiar";
-const mensaje = document.getElementById("mensaje");
-const en = document.getElementById("entrada");
-const pantallaInfo = document.getElementById("info-pantalla");
-pantallaInfo.hidden = false;
-const pantalla = document.getElementById("pantalla");
-pantalla.appendChild(btnCopiar);
-btnCopiar.hidden = true;
-const btn_desencriptar = document.getElementById("btn-desencriptar");
-const btn_encriptar = document.getElementById("btn-encriptar");
-
-function encriptar(){
-    let texto = en.value;
-    if(texto != ""){ 
-        pantallaInfo.hidden = true;
-        mensaje.innerText = encriptarTexto(texto);
-        btnCopiar.hidden = false;
-        en.value = "";
-    }
-}
-function copiarTexto(){
-    en.value = mensaje.textContent;
-    mensaje.innerText = "";
-    pantalla.appendChild(pantallaInfo);
-    btn_desencriptar.disabled = false;
-    btnCopiar.hidden = true;
-    pantallaInfo.hidden = false;
-    btn_encriptar.disabled = true;
-}
+const textAreaEncriptar = document.getElementById("textoIngresado");
+const textAreaTextoEncriptado = document.getElementById("textoEncriptado");
+const botonCopiar = document.getElementById("btn-copiar");
+const imagenMuneco = document.getElementById("imagen-muneco");
+const parrafoInfoNingunMsj = document.getElementById("p-info-ningun-msj");
+const parrafoInfoIngresaTxt = document.getElementById("p-info-ingresa-txt");
+const botonEncriptar = document.getElementById("encriptar");
 
 function encriptarTexto(texto){
+    if(/[A-ZÁ-Úá-ú]/g.test(texto)){
+        return 0;
+    }
     let textEncriptado = "";
     const vocales = {
         "a": "ai",
@@ -39,7 +18,6 @@ function encriptarTexto(texto){
         "o": "ober",
         "u": "ufat"
     }
-    texto = texto.toLowerCase();
     for(let l of texto){
         if("aeiou".includes(l)){
             textEncriptado += vocales[l];
@@ -50,14 +28,25 @@ function encriptarTexto(texto){
     return textEncriptado;
 }
 
-function desencriptarTexto(texto){
-    
-}
+function encriptar(){
+    let texto = textAreaEncriptar.value;
+    if(texto == ""){
+        alert("¡Debes ingresar algún texto!");
+        return;
+    }
+    let textEncriptado = encriptarTexto(texto);
+    if(textEncriptado == 0){
+        alert("¡Solo debes escribir letras minúsculas y sin acento!");
+        return;
+    }
+    textAreaTextoEncriptado.value = textEncriptado;
+    imagenMuneco.hidden = true;
+    parrafoInfoNingunMsj.hidden = true;
+    parrafoInfoIngresaTxt.hidden = true;
+    textAreaTextoEncriptado.hidden = false;
+    botonCopiar.hidden = false;
+    textAreaEncriptar.value = "";
 
-btn_encriptar.addEventListener("click", encriptar);
-btnCopiar.addEventListener("click", copiarTexto);
-function cambiarEstado(){
-    btn_encriptar.disabled = false;
 }
-en.addEventListener("input", cambiarEstado);
+botonEncriptar.addEventListener("click", encriptar);
 
