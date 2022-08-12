@@ -80,16 +80,16 @@ button:active{
 
 }
 .ladoIzquierdo textarea{
-    width: 20em;
-    height: 50%;
+    width: 10em;
+    height: 12em;
     font-family: 'Inter', monospace;
     font-size: 32px;
-    resize: none;
     border-style: none;
+    resize: none;
     outline: none;
 }
 .ladoIzquierdo button{
-    margin-top: 9%;
+    margin-top: 10%;
     background-color: darkblue;
     color: white;
 }
