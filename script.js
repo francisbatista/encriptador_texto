@@ -6,6 +6,7 @@ const parrafoInfoNingunMsj = document.getElementById("p-info-ningun-msj");
 const parrafoInfoIngresaTxt = document.getElementById("p-info-ingresa-txt");
 const botonEncriptar = document.getElementById("encriptar");
 const botonDesencriptar = document.getElementById("desencriptar");
+const textAreaYBotonCopiar = document.getElementById("textAreaYBotonCopiar");
 
 function encriptarTexto(texto){
     if(/[A-ZÁ-Úá-ú]/g.test(texto)){
@@ -51,8 +52,7 @@ function encriptar(){
     imagenMuneco.hidden = true;
     parrafoInfoNingunMsj.hidden = true;
     parrafoInfoIngresaTxt.hidden = true;
-    textAreaTextoEncriptado.hidden = false;
-    botonCopiar.hidden = false;
+    textAreaYBotonCopiar.hidden = false;
     textAreaEncriptar.value = "";
 }
 function desencriptar(){
@@ -67,8 +67,7 @@ function desencriptar(){
     imagenMuneco.hidden = true;
     parrafoInfoNingunMsj.hidden = true;
     parrafoInfoIngresaTxt.hidden = true;
-    textAreaTextoEncriptado.hidden = false;
-    botonCopiar.hidden = false;
+    textAreaYBotonCopiar.hidden = false;
     textAreaEncriptar.value = "";
 }
 
@@ -79,8 +78,7 @@ function copiar(){
 
 function textAreaOnPaste(){
         textAreaTextoEncriptado.value = "";
-        textAreaTextoEncriptado.hidden = true;
-        botonCopiar.hidden = true;
+        textAreaYBotonCopiar.hidden = true;
         imagenMuneco.hidden = false;
         parrafoInfoNingunMsj.hidden = false;
         parrafoInfoIngresaTxt.hidden = false;

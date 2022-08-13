@@ -98,3 +98,59 @@ button:active{
     width: 10em;
     margin: 3% auto;
 }
+
+@media screen and (max-width: 850px){
+    .ladoDerecho{
+        display: inline;
+    }
+    .ladoDerecho button{
+        display: block;
+        width: 150px;
+        margin: auto;
+    }
+    .ladoIzquierdo button{
+        margin: 10px auto;
+        display: block;
+    }
+    .botones{
+        display: block;
+        margin: auto;
+    }
+    .ladoIzquierdo{
+        display: inline;
+        background-color: white;
+    }
+    .logo{
+        display: block;
+        margin: 10px auto;
+
+    }
+    main{
+        display: inline;
+    }
+    .ladoIzquierdo img{
+        height: 175px;
+        margin: auto;
+    }
+    .ladoDerecho textarea{
+        margin: 10px auto;
+        text-align: center;
+        font-size: 28px;
+    }
+    .ladoIzquierdo textarea{
+        display: block;
+        width: 10em;
+        height: 7em;
+        margin: 10px auto;
+        font-size: 28px;
+    }
+    #encriptar{
+        margin-bottom: 10px;
+    }
+    .ladoIzquierdo div img + p{
+        font-size: 24px;
+    }
+    .advertencia{
+        text-align: center;
+    }
+}
