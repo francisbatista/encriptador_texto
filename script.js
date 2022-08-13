@@ -28,6 +28,10 @@ function encriptarTexto(texto){
     }
     return textEncriptado;
 }
+function desencriptarTexto(texto){
+    texto = texto.replaceAll("ai","a").replaceAll("enter","e").replaceAll("imes","i").replaceAll("ober","o").replaceAll("ufat","u");
+    return texto;
+}
 
 function encriptar(){
     let texto = textAreaEncriptar.value;
@@ -44,6 +48,22 @@ function encriptar(){
         return;
     }
     textAreaTextoEncriptado.value = textEncriptado;
+    imagenMuneco.hidden = true;
+    parrafoInfoNingunMsj.hidden = true;
+    parrafoInfoIngresaTxt.hidden = true;
+    textAreaTextoEncriptado.hidden = false;
+    botonCopiar.hidden = false;
+    textAreaEncriptar.value = "";
+}
+function desencriptar(){
+    let texto = textAreaEncriptar.value;
+    if(texto == ""){
+        alert("¡Debes ingresar algún texto encriptado, para desencriptar!");
+        textAreaEncriptar.focus();
+        return;
+    }
+    let textoDesencriptado = desencriptarTexto(texto);
+    textAreaTextoEncriptado.value = textoDesencriptado;
     imagenMuneco.hidden = true;
     parrafoInfoNingunMsj.hidden = true;
     parrafoInfoIngresaTxt.hidden = true;
@@ -69,5 +89,6 @@ function textAreaOnPaste(){
 botonEncriptar.addEventListener("click", encriptar);
 botonCopiar.addEventListener("click", copiar);
 textAreaEncriptar.addEventListener("paste", textAreaOnPaste);
+botonDesencriptar.addEventListener("click", desencriptar);
 
 
